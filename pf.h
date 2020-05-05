@@ -1,18 +1,3 @@
-//
-// File:        pf.h
-// Description: Paged File component interface
-// Authors:     Hugo Rivero (rivero@cs.stanford.edu)
-//              Dallan Quass (quass@cs.stanford.edu)
-//              Jason McHugh (mchughj@cs.stanford.edu)
-//
-// 1997: Default page size is now 4k.
-//       Some additional constants used for the statistics.
-// 1998: PageNum is now an int instead of short int.
-//       Allow chunks from the buffer manager to not be associated with
-//       a particular file.  Allows students to use main memory chunks
-//       that are associated with (and limited by) the buffer.
-// 2005: Added GetLastPage and GetPrevPage for rocking
-
 #ifndef PF_H
 #define PF_H
 
