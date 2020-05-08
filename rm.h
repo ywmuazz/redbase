@@ -126,6 +126,10 @@ private:
     RC GetFirstZeroBit(char *bitmap, int size, int &location);
     RC GetNextOneBit(char *bitmap, int size, int start, int &location);
 
+    char* GetRecPtr(char* p,int slot)const;
+    char* GetRecPtrByBitmap(char* bitmap,int slot)const;
+
+
     bool openedFH;
     struct RM_FileHeader header;
     PF_FileHandle pfh;
