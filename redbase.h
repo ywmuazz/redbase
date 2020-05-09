@@ -106,3 +106,4 @@ typedef char Boolean;
     exit(1); \
 }while(0)
 
+#define DEBUG

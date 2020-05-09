@@ -311,3 +311,20 @@ RC RM_FileScan::GetNextRec(RM_Record& rec) {
 
     assert(0);
 }
+
+RC RM_FileScan::CloseScan() {
+    RC rc;
+    if (openScan == false) {
+        return (RM_INVALIDSCAN);
+    }
+    if (hasPagePinned == true) {
+        if ((rc = fileHandle->pfh.UnpinPage(scanPage)))
+            return (rc);
+    }
+    if (initializedValue == true) {
+        free(this->value);
+        initializedValue = false;
+    }
+    openScan = false;
+    return (0);
+}

@@ -47,7 +47,8 @@ RM_Record& RM_Record::operator= (const RM_Record &record){
             delete [] data;
         }
         this->size=record.size;
-        this->data=new char[size];
+        //这样做的好处是,当stringlen小于size时,可以new出末尾\0
+        this->data=new char[size]; 
         memcpy(this->data,record.data,this->size);
         this->rid=record.rid;
     }

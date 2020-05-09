@@ -338,7 +338,7 @@ RC RM_FileHandle::UpdateRec(const RM_Record& rec) {
     if (rc = GetPageDataAndBitmap(ph, bitmap, pageheader))
         goto retclean;
     bool exists;
-    if (rc = CheckBitSet(bitmap, header.numRecordsPerPage, slot,exists))
+    if (rc = CheckBitSet(bitmap, header.numRecordsPerPage, slot, exists))
         goto retclean;
     if (!exists) {
         rc = RM_INVALIDRECORD;
@@ -368,8 +368,6 @@ RC RM_FileHandle::ForcePages(PageNum pageNum) {
     pfh.ForcePages(pageNum);
     return (0);
 }
-
-
 
 // TODO
 //取得下一条记录，这里还用了nextPage
@@ -436,16 +434,26 @@ bool RM_FileHandle::isValidFH() const {
 
 bool RM_FileHandle::isValidFileHeader() const {
     if (!isValidFH()) {
+        // puts("FH.");
         return false;
     }
     if (header.recordSize <= 0 || header.numRecordsPerPage <= 0 ||
         header.numPages <= 0) {
+        // puts("recordSize nums pages.");
         return false;
     }
     if ((header.bitmapOffset + header.bitmapSize +
          header.recordSize * header.numRecordsPerPage) > PF_PAGE_SIZE) {
         return false;
     }
+
+#ifdef DEBUG
+    printf("bitmap off:%d\nbitmap size:%d recsize:%d nums:%d\n",
+           header.bitmapOffset, header.bitmapSize, header.recordSize,
+           header.numRecordsPerPage);
+    printf("sum:%d \n", header.bitmapOffset + header.bitmapSize +
+                            header.recordSize * header.numRecordsPerPage);
+#endif
     return true;
 }
 
@@ -516,10 +524,10 @@ int RM_FileHandle::NumBitsToCharSize(int size) {
     return (size - 1) / 8 + 1;
 }
 
-//这个是对的
+//这个除了PF_PAGE_SIZE以外是对的，因为没有减去头
 //佩服，学习了
 //我改成用int
 int RM_FileHandle::CalcNumRecPerPage(int recSize) {
     // return floor((PF_PAGE_SIZE * 1.0) / (1.0 * recSize + 1.0 / 8));
-    return PF_PAGE_SIZE * 8 / (1 + recSize * 8);
+    return (PF_PAGE_SIZE - sizeof(RM_PageHeader)) * 8 / (1 + recSize * 8);
 }
