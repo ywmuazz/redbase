@@ -216,6 +216,7 @@ RC PF_BufferMgr::UnpinPage(int fd, PageNum pageNum) {
   RC rc;     // return code
   int slot;  // buffer slot where page is located
 
+
   // The page must be found and pinned in the buffer
   if ((rc = hashTable.Find(fd, pageNum, slot))) {
     if ((rc == PF_HASHNOTFOUND))

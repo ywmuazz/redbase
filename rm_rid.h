@@ -5,6 +5,7 @@
 // components will require the use of RID but not the rest of RM.
 
 #include "redbase.h"
+#include<string>
 
 //
 // PageNum: uniquely identifies a page in a file
@@ -34,7 +35,10 @@ public:
     RC GetSlotNum(SlotNum &slotNum) const;         // Return slot number
 
     RC isValidRID() const; // checks if it is a valid RID
-
+    std::string toString()const;
+    bool operator<(const RID& rhs)const{
+      return page<rhs.page||(page==rhs.page&&slot<rhs.slot);
+    }
 private:
   PageNum page;
   SlotNum slot;

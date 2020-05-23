@@ -56,3 +56,7 @@ RC RID::isValidRID() const {
     else
         return RM_INVALIDRID;
 }
+
+std::string RID::toString()const{
+    return std::string("(")+std::to_string(page)+","+std::to_string(slot)+")";
+}
