@@ -20,7 +20,7 @@ CFLAGS=-g -O0 -Wall $(INC_DIRS)
 
 PF_SOURCES     = pf_buffermgr.cpp pf_error.cpp pf_filehandle.cpp \
                  pf_pagehandle.cpp pf_hashtable.cpp pf_manager.cpp \
-                 statistics.cpp #  pf_statistics.cc 
+                #  pf_statistics.cc statistics.cc
 
 RM_SOURCES     = rm_manager.cpp rm_filehandle.cpp rm_record.cpp \
                  rm_filescan.cpp rm_error.cpp rm_rid.cpp
@@ -29,9 +29,9 @@ IX_SOURCES     = ix_manager.cpp ix_indexhandle.cpp ix_indexscan.cpp ix_error.cpp
 
 SM_SOURCES     = sm_manager.cpp printer.cpp sm_error.cpp sm_attriterator.cpp
 
-QL_SOURCES     = ql_error.cpp ql_manager.cpp ql_node.cpp ql_nodeproj.cpp ql_noderel.cpp ql_nodejoin.cpp ql_nodesel.cpp
+# QL_SOURCES     = ql_error.cc ql_manager.cc ql_node.cc ql_nodeproj.cc ql_noderel.cc ql_nodejoin.cc ql_nodesel.cc qo_manager.cc
 
-UTILS_SOURCES  = dbcreate.cpp dbdestroy.cpp redbase.cpp
+UTILS_SOURCES  = dbcreate.cpp dbdestroy.cpp #redbase.cpp
 
 PARSER_SOURCES = scan.c parse.c nodes.c interp.cpp
 
@@ -46,7 +46,7 @@ UTILS_OBJECTS  = $(UTILS_SOURCES:.cpp=.o)
 PARSER_OBJECTS = scan.o parse.o nodes.o interp.o
 # TESTER_OBJECTS =$(TESTER_SOURCES:.cc=.o)
 OBJS        = $(PF_OBJECTS) $(RM_OBJECTS) $(IX_OBJECTS) \
-                $(SM_OBJECTS) $(QL_OBJECTS) $(UTILS_OBJECTS)
+                $(SM_OBJECTS) $(UTILS_OBJECTS)
 UTILS= $(UTILS_SOURCES:.cpp=)
 
 LIBRARY_PF     = $(LIB_DIR)libpf.a
@@ -56,8 +56,8 @@ LIBRARY_SM     = $(LIB_DIR)libsm.a
 LIBRARY_QL     = $(LIB_DIR)libql.a
 LIBRARY_PARSER = $(LIB_DIR)libparser.a
 LIBRARIES      = $(LIBRARY_PF) $(LIBRARY_RM) $(LIBRARY_IX) \
-                 $(LIBRARY_SM) $(LIBRARY_QL) $(LIBRARY_PARSER)
-LIBS           = -lparser -lql -lsm -lix -lrm -lpf
+                 $(LIBRARY_SM) $(LIBRARY_PARSER)
+LIBS           = -lparser -lsm -lix -lrm -lpf
 
 #all
 all: $(LIBRARIES) $(UTILS)
@@ -79,9 +79,9 @@ $(LIBRARY_SM): $(SM_OBJECTS)
 	$(AR) $(LIBRARY_SM) $(SM_OBJECTS)
 	$(RANLIB) $(LIBRARY_SM)
 
-$(LIBRARY_QL): $(QL_OBJECTS)
-	$(AR) $(LIBRARY_QL) $(QL_OBJECTS)
-	$(RANLIB) $(LIBRARY_QL)
+# $(LIBRARY_QL): $(QL_OBJECTS)
+# 	$(AR) $(LIBRARY_QL) $(QL_OBJECTS)
+# 	$(RANLIB) $(LIBRARY_QL)
 
 $(LIBRARY_PARSER): $(PARSER_OBJECTS)
 	$(AR) $(LIBRARY_PARSER) $(PARSER_OBJECTS)

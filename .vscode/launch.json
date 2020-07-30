@@ -10,7 +10,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/redbase",
-            "args": [],
+            "args": ["mdb"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],

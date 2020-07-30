@@ -93,6 +93,14 @@ private:
 
 using namespace std;
 
+
+
+#include "statistics.h"  // For StatisticsMgr interface
+// Global variable for the statistics managerls
+StatisticsMgr *pStatisticsMgr;
+
+
+
 PF_BufferMgr::PF_BufferMgr(int _numPages) : hashTable(PF_HASH_TBL_SIZE) {
   numPages = _numPages;
   pageSize = PF_PAGE_SIZE + sizeof(PF_PageHdr);
