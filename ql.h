@@ -20,11 +20,7 @@
 #include "ql_node.h"
 
 
-typedef struct QO_Rel{
-  int relIdx;
-  int indexAttr;
-  int indexCond;
-} QO_Rel;
+
 
 //
 // QL_Manager: query language (DML)
@@ -36,7 +32,7 @@ class QL_Manager {
     friend class QL_NodeRel;
     friend class QL_NodeSel;
     friend class QL_NodeProj;
-    friend class QO_Manager;
+
 public:
     QL_Manager (SM_Manager &smm, IX_Manager &ixm, RM_Manager &rmm);
     ~QL_Manager();                       // Destructor
@@ -120,10 +116,6 @@ private:
   RC SetUpNodes(QL_Node *&topNode, int nSelAttrs, const RelAttr selAttrs[]);
   // Sets up the entire query tree based on the return of the Query optimizer and returns the 
   // top node in topNode
-  RC SetUpNodesWithQO(QL_Node *&topNode, QO_Rel* qorels, int nSelAttrs, const RelAttr selAttrs[]);
-  RC SetUpFirstNodeWithQO(QL_Node *&topNode, QO_Rel* qorels);
-  RC JoinRelationWithQO(QL_Node *&topNode, QO_Rel* qorels, QL_Node *currNode, int relIndex);
-  RC RecalcCondToRel(QO_Rel* qorels);
   RC AttrToRelIndex(const RelAttr attr, int& relIndex);
   // Creates a join node and a relation node for the relation specified, and
   // returns the top node in topNode

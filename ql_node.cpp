@@ -121,10 +121,12 @@ RC QL_Node::PrintCondition(const Condition condition)
     return 0;
 }
 
-//计算给一个index(应该是这个属性在select中的index)，返回它在一个数据块中的offset
+//计算给一个index(是这个属性在attrCatEntry中的index)，返回它在本rel的tuple内存块中的offset
 RC QL_Node::IndexToOffset(int index, int& offset, int& length)
 {
     offset = 0;
+    //attrsInRec是该node(rel)的所有attr的idx
+    //一直累加前缀的len，直到遇到所要求的attr的index
     for (int i = 0; i < attrsInRecSize; i++) {
         if (attrsInRec[i] == index) {
             length = qlm.attrEntries[attrsInRec[i]].attrLength;

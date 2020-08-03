@@ -78,9 +78,11 @@ RC QL_NodeJoin::SetUpNode(int numConds)
     int attrListSize1, attrListSize2;
     if ((rc = node1.GetAttrList(attrList1, attrListSize1)) || (rc = node2.GetAttrList(attrList2, attrListSize2)))
         return rc;
+  
     attrsInRecSize = attrListSize1 + attrListSize2;
+    attrsInRec = (int*)malloc(attrsInRecSize*sizeof(int));
     for (int i = 0; i < attrListSize1; i++)
-        attrsInRec[i] = attrList1[1];
+        attrsInRec[i] = attrList1[i];
     for (int i = 0; i < attrListSize2; i++)
         attrsInRec[i + attrListSize1] = attrList2[i];
     condList = (Cond*)malloc(numConds * sizeof(Cond));
@@ -218,6 +220,7 @@ RC QL_NodeJoin::DeleteNodes()
   return 0;
 }
 
+//indexAttr是本次join所用上indexjoin的cond的两个attr中属于左前缀的那一个attr的idx
 RC QL_NodeJoin::UseIndexJoin(int indexAttr, int subNodeAttr, int indexNumber)
 {
   useIndexJoin = true;

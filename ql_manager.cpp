@@ -409,7 +409,7 @@ RC QL_Manager::JoinRelation(QL_Node*& topNode, QL_Node* currNode, int relIndex)
             //右为value,符号为equal,尝试用索引去获取左边的匹配元组
             if (condptr[i].op == EQ_OP && !condptr[i].bRhsIsAttr && useIndex == false) {
                 int index = 0;
-                //求出左属性在attr数组中的index
+                //求出左属性在attr数组中的index，左属性就是右rel中的一个属性
                 if (rc = GetAttrCatEntryPos(condptr[i].lhsAttr, index))
                     return rc;
                 if (attrEntries[index].indexNo != -1) {
@@ -429,6 +429,7 @@ RC QL_Manager::JoinRelation(QL_Node*& topNode, QL_Node* currNode, int relIndex)
                 int relIdx1, relIdx2;
                 AttrToRelIndex(condptr[i].lhsAttr, relIdx1);
                 AttrToRelIndex(condptr[i].rhsAttr, relIdx2);
+                //左rel是不管了，左rel用不用index先前已经决定好了，现在如果右rel的属性能够用上就用
                 if (relIdx2 == relIndex && attrEntries[index2].indexNo != -1) {
                     if (rc = joinNode->UseIndexJoin(index1, index2, attrEntries[index2].indexNo))
                         return rc;
@@ -506,6 +507,7 @@ RC QL_Manager::SetUpFirstNode(QL_Node*& topNode)
             //等值、右为attr、未用索引、非update操作
             if (condptr[i].op == EQ_OP && !condptr[i].bRhsIsAttr && useIndex == false && isUpdate == false) {
                 int index = 0;
+                //右是value，那么左边的就是该rel的attr
                 if ((rc = GetAttrCatEntryPos(condptr[i].lhsAttr, index)))
                     return (rc);
                 if ((attrEntries[index].indexNo != -1)) { // add only if there is an index on this attribute
