@@ -1,5 +1,6 @@
 #include <sys/types.h>
 #include <unistd.h>
+#include<cstdio>
 
 #include "pf_buffermgr.h"
 #include "pf_internal.h"
@@ -206,6 +207,9 @@ RC PF_FileHandle::AllocatePage(PF_PageHandle& pageHandle) {
 }
 
 RC PF_FileHandle::DisposePage(PageNum pageNum) {
+  // printf("DisposePage call. pagenum:%d\n",pageNum);
+
+
   int rc;          // return code
   char* pPageBuf;  // address of page in buffer pool
 

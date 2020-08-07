@@ -160,6 +160,9 @@ RC PF_BufferMgr::GetPage(int fd, PageNum pageNum, char **ppBuffer,
   }
 
   *ppBuffer = bufTable[slot].pData;
+
+  // printf("PAUP: pin fd:%d pagenum:%d\n",fd,pageNum);
+
   return 0;
 }
 
@@ -221,6 +224,9 @@ RC PF_BufferMgr::MarkDirty(int fd, PageNum pageNum) {
 
 // unpined到0才会换到mru
 RC PF_BufferMgr::UnpinPage(int fd, PageNum pageNum) {
+
+  // printf("PAUP: unpin fd:%d pagenum:%d\n",fd,pageNum);
+
   RC rc;     // return code
   int slot;  // buffer slot where page is located
 
@@ -239,7 +245,7 @@ RC PF_BufferMgr::UnpinPage(int fd, PageNum pageNum) {
   if (--(bufTable[slot].pinCount) == 0) {
     if ((rc = Unlink(slot)) || (rc = LinkHead(slot))) return (rc);
   }
-
+  // printf("PAUP: unpin fd:%d pagenum:%d\n",fd,pageNum);
   // Return ok
   return (0);
 }
@@ -257,6 +263,7 @@ RC PF_BufferMgr::FlushPages(int fd) {
     if (bufTable[slot].fd == fd) {
       // Ensure the page is not pinned
       if (bufTable[slot].pinCount) {
+        // printf("FlushPages fd:%d pagenum:%d\n",fd,bufTable[slot].pageNum);
         rcWarn = PF_PAGEPINNED;
       } else {
         // Write the page if dirty

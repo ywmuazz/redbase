@@ -1077,7 +1077,8 @@ RC IX_IndexHandle::FindRecordPage(PF_PageHandle& leafPH, PageNum& leafPage, void
         if ((nowPage != header.rootPage)&&(rc = pfh.UnpinPage(nowPage)))
             return rc;
         if ((rc = pfh.GetThisPage(nextPage, nowPH)) || (rc = nowPH.GetData((char*&)rHeader)))
-            nowPage = nextPage;
+            return rc;
+        nowPage = nextPage;
     }
     leafPH = nowPH;
     leafPage = nowPage;

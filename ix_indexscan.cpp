@@ -326,6 +326,7 @@ RC IX_IndexScan::GetNextEntry(RID& rid)
             //?? < <=那种运算符，从第一个叶子开始，开始就不满足，难道扫完?
             //似乎不会，因为beginscan的时候就已经判断第一个存不存在了
             foundLastValue = true;
+            // scanEnded = true;
             return IX_EOF;
         }
     }

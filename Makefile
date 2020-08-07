@@ -8,7 +8,7 @@ BUILD_DIR=./build/
 LIB_DIR=./lib/
 INC_DIRS=-I.
 
-CFLAGS=-g -O0 -Wall $(INC_DIRS)
+CFLAGS= -O3 -Wall $(INC_DIRS)
 # OBJS=dbdestroy.o dbcreate.o redbase.o\
 # 	pf_manager.o pf_pagehandle.o pf_filehandle.o \
 # 	pf_hashtable.o pf_error.o pf_buffermgr.o \
@@ -31,7 +31,7 @@ SM_SOURCES     = sm_manager.cpp printer.cpp sm_error.cpp sm_attriterator.cpp
 
 QL_SOURCES     = ql_error.cpp ql_manager.cpp ql_node.cpp ql_nodeproj.cpp ql_noderel.cpp ql_nodejoin.cpp ql_nodesel.cpp
 
-UTILS_SOURCES  = dbcreate.cpp dbdestroy.cpp redbase.cpp
+UTILS_SOURCES  = dbcreate.cpp dbdestroy.cpp redbase.cpp tester.cpp
 
 PARSER_SOURCES = scan.c parse.c nodes.c interp.cpp
 
