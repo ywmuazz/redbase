@@ -4,13 +4,15 @@ A simple DBMS.
 
 ### Framework
 
-<br />![image.png](https://cdn.nlark.com/yuque/0/2020/png/1532622/1597657533761-53653339-e3bc-4a4b-9c0f-eff5ab562a5d.png#align=left&display=inline&height=203&margin=%5Bobject%20Object%5D&name=image.png&originHeight=636&originWidth=1026&size=86342&status=done&style=none&width=327)<br />
+
+<img src="https://cdn.nlark.com/yuque/0/2020/png/1532622/1597657533761-53653339-e3bc-4a4b-9c0f-eff5ab562a5d.png#align=left&display=inline&height=203&margin=%5Bobject%20Object%5D&name=image.png&originHeight=636&originWidth=1026&size=86342&status=done&style=none&width=327" width="500" >
 
 
 ---
 
-<a name="tretI"></a>
 ### Layers
+
+
 
 ![image.png](https://raw.githubusercontent.com/ywmuazz/redbase/master/pic/pfxmind.png)
 ![image.png](https://raw.githubusercontent.com/ywmuazz/redbase/master/pic/rmxmind.png)
@@ -23,14 +25,13 @@ A simple DBMS.
 
 
 
-<a name="lM1Cj"></a>
 ### Syntax Tree
 
-![image.png](https://cdn.nlark.com/yuque/0/2020/png/1532622/1597657976317-10e76c64-3df0-4f69-b6ee-91447baa00b8.png#align=left&display=inline&height=365&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1086&originWidth=996&size=338441&status=done&style=none&width=335)
+<img src="https://cdn.nlark.com/yuque/0/2020/png/1532622/1597657976317-10e76c64-3df0-4f69-b6ee-91447baa00b8.png#align=left&display=inline&height=365&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1086&originWidth=996&size=338441&status=done&style=none&width=335" width="500" >
+
 
 ---
 
-<a name="ygtJA"></a>
 ### Performance:
 
 <br />
