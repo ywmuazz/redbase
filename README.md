@@ -12,17 +12,11 @@ A simple DBMS.
 <a name="tretI"></a>
 ### Layers
 
-<br />![image.png](https://cdn.nlark.com/yuque/0/2020/png/1532622/1597660192335-d931612f-b43c-4bb2-a4e0-e13e7acfc22e.png#align=left&display=inline&height=738&margin=%5Bobject%20Object%5D&name=image.png&originHeight=738&originWidth=1484&size=0&status=done&style=none&width=1484)<br />
-<br />
-<br />![image.png](https://cdn.nlark.com/yuque/0/2020/png/1532622/1597660194432-93ad0e7f-5f00-4647-bccb-570537f4459b.png#align=left&display=inline&height=778&margin=%5Bobject%20Object%5D&name=image.png&originHeight=778&originWidth=1285&size=0&status=done&style=none&width=1285)<br />
-<br />
-<br />![image.png](https://cdn.nlark.com/yuque/0/2020/png/1532622/1597660196159-4ac624e8-4cb8-4b4a-8143-fe5054c9fc72.png#align=left&display=inline&height=565&margin=%5Bobject%20Object%5D&name=image.png&originHeight=565&originWidth=1172&size=0&status=done&style=none&width=1172)<br />
-<br />
-<br />![image.png](https://cdn.nlark.com/yuque/0/2020/png/1532622/1597660198457-116e0cd3-954d-421c-99db-0c3ac9ea2801.png#align=left&display=inline&height=517&margin=%5Bobject%20Object%5D&name=image.png&originHeight=517&originWidth=1259&size=0&status=done&style=none&width=1259)<br />
-<br />
-<br />![image.png](https://cdn.nlark.com/yuque/0/2020/png/1532622/1597660199898-dfe96bfa-7c96-4977-88ac-d714a8dc1e0e.png#align=left&display=inline&height=1140&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1140&originWidth=1639&size=0&status=done&style=none&width=1639)<br />
-<br />
-<br />
+![image.png](https://raw.githubusercontent.com/ywmuazz/redbase/master/pic/pfxmind.png)
+![image.png](https://raw.githubusercontent.com/ywmuazz/redbase/master/pic/rmxmind.png)
+![image.png](https://raw.githubusercontent.com/ywmuazz/redbase/master/pic/ixxmind.png)
+![image.png](https://raw.githubusercontent.com/ywmuazz/redbase/master/pic/smxmind.png)
+![image.png](https://raw.githubusercontent.com/ywmuazz/redbase/master/pic/qlxmind.png)
 
 
 ---
