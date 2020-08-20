@@ -27,6 +27,20 @@ A simple DBMS.
 
 ### Syntax Tree
 
+sample:
+```sql
+create table tb1 (id i,name c10,score i);
+create table tb2 (id i,age i);
+create table tb3 (id i,money float);
+
+select 
+	id 
+from 
+	tb1,tb2,tb3 
+where 
+	tb1.name="Mike" and tb1.score=99 and tb1.id=tb2.id and tb2.id=tb3.id and tb2.age=18 and tb3.money=100.0;
+```
+
 <img src="https://cdn.nlark.com/yuque/0/2020/jpeg/1532622/1597919222605-a1d45282-cee4-4f95-83a9-c566b5a0a0b5.jpeg#align=left&display=inline&height=1383&margin=%5Bobject%20Object%5D&name=666.jpg&originHeight=1383&originWidth=1233&size=103279&status=done&style=none&width=1233" width="500" >
 
 
