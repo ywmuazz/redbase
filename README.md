@@ -27,7 +27,7 @@ A simple DBMS.
 
 ### Syntax Tree
 
-<img src="https://cdn.nlark.com/yuque/0/2020/png/1532622/1597657976317-10e76c64-3df0-4f69-b6ee-91447baa00b8.png#align=left&display=inline&height=365&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1086&originWidth=996&size=338441&status=done&style=none&width=335" width="500" >
+<img src="https://cdn.nlark.com/yuque/0/2020/jpeg/1532622/1597919222605-a1d45282-cee4-4f95-83a9-c566b5a0a0b5.jpeg#align=left&display=inline&height=1383&margin=%5Bobject%20Object%5D&name=666.jpg&originHeight=1383&originWidth=1233&size=103279&status=done&style=none&width=1233" width="500" >
 
 
 ---
