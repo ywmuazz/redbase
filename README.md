@@ -41,7 +41,7 @@ where
 	tb1.name="Mike" and tb1.score=99 and tb1.id=tb2.id and tb2.id=tb3.id and tb2.age=18 and tb3.money=100.0;
 ```
 
-<img src="https://cdn.nlark.com/yuque/0/2020/jpeg/1532622/1597919222605-a1d45282-cee4-4f95-83a9-c566b5a0a0b5.jpeg#align=left&display=inline&height=1383&margin=%5Bobject%20Object%5D&name=666.jpg&originHeight=1383&originWidth=1233&size=103279&status=done&style=none&width=1233" width="500" >
+<img src="https://cdn.nlark.com/yuque/0/2020/png/1532622/1597921322678-e57e1a67-e6b3-47e1-907a-c28773394f48.png#align=left&display=inline&height=1383&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1383&originWidth=1233&size=532909&status=done&style=none&width=1233" width="500" >
 
 
 ---
