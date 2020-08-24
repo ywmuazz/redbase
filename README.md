@@ -2,6 +2,19 @@
 
 A simple DBMS.
 
+### Compile
+```
+apt-get install g++
+apt-get install bison
+apt-get install flex
+mkdir lib
+make
+```
+
+### How to start
+
+[Query Language](https://github.com/ywmuazz/redbase/blob/master/rql.md)
+
 ### Framework
 
 
